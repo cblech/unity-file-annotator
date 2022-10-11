@@ -2,7 +2,7 @@
   "name": "unity-file-annotator",
   "displayName": "Unity File Annotator",
   "description": "Annotates Unity files like .scene and .prefab to easier understand these files when looking at them in VS Code",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "engines": {
     "vscode": "^1.72.0"
   },
