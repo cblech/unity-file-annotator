@@ -73,6 +73,8 @@ export class Annotator {
     private async indexAllFiles() {
         this._hasIndexedEverything = true;
 
+        workspace.getConfiguration("").update("diffEditor.codeLens",true);
+
         let uris = await workspace.findFiles("**/*.unity");
         
         for (const uri of uris) {
@@ -289,8 +291,6 @@ export class Annotator {
 
     private makeAnnotations(): CodeLens[] {
         let out: CodeLens[] = [];
-
-        //workspace.getConfiguration("").update("diffEditor.codeLens",true);
 
         for (let i = 0; i < this._document!.lineCount; i++) {
             let line = this._document!.lineAt(i);
