@@ -1,7 +1,7 @@
 {
-  "name": "unity-asset-annotator",
-  "displayName": "Unity Asset Annotator",
-  "description": "Annotates Unity Asset files like .asset, .scene, or .prefab to easier understand these files when looking at them in VS Code",
+  "name": "unity-file-annotator",
+  "displayName": "Unity File Annotator",
+  "description": "Annotates Unity files like .scene and .prefab to easier understand these files when looking at them in VS Code",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.72.0"
@@ -13,13 +13,14 @@
     "onStartupFinished",
     "onCommand:unity-asset-annotator.helloWorld"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cblech/unity-file-annotator"
+  },
+  "publisher": "cblech",
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
-      {
-        "command": "unity-asset-annotator.helloWorld",
-        "title": "Hello World"
-      },
       {
         "command": "unity-asset-annotator.openFile",
         "title": "Opens File at specific line",
