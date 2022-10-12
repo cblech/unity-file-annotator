@@ -4,7 +4,7 @@
   "description": "Annotates Unity files like .scene and .prefab to easier understand these files when looking at them in VS Code",
   "version": "0.0.2",
   "engines": {
-    "vscode": "^1.72.0"
+    "vscode": "^1.0.0"
   },
   "categories": [
     "Other"
@@ -37,7 +37,7 @@
     "test": "node ./out/test/runTest.js"
   },
   "devDependencies": {
-    "@types/vscode": "^1.72.0",
+    "@types/vscode": "^1.0.0",
     "@types/glob": "^8.0.0",
     "@types/mocha": "^10.0.0",
     "@types/node": "16.x",
