@@ -73,20 +73,21 @@ export class Annotator {
     private async indexAllFiles() {
         this._hasIndexedEverything = true;
 
-        workspace.getConfiguration("").update("diffEditor.codeLens",true);
+        let unityUris = await workspace.findFiles("**/*.unity");
+        let prefabUris = await workspace.findFiles("**/*.prefab");
 
-        let uris = await workspace.findFiles("**/*.unity");
+        if (unityUris.length > 0 || prefabUris.length > 0) {
+            workspace.getConfiguration("").update("diffEditor.codeLens",true);
+        }
         
-        for (const uri of uris) {
+        for (const uri of unityUris) {
             if (this.canAnnotateUri(uri)) {
                 var document = await workspace.openTextDocument(uri);
                 this.indexDocument(document);
             }
         }
 
-        uris = await workspace.findFiles("**/*.prefab");
-
-        for (const uri of uris) {
+        for (const uri of prefabUris) {
             if (this.canAnnotateUri(uri)) {
                 var document = await workspace.openTextDocument(uri);
                 this.indexDocument(document);
